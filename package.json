@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "framer-motion": "^11.3.28",
     "next": "14.2.5",
     "next-auth": "^4.24.7",
+    "nextjs-toploader": "^1.6.12",
     "react": "^18",
     "react-dom": "^18"
   },
