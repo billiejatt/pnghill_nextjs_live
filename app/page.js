@@ -1,21 +1,21 @@
 // Import necessary dependencies
 import Grid from "../components/Grid";
 import Search from "../components/Search";
-import { getItems } from "../lib/api";
+// import { getItems } from "../lib/api";
 
 export const revalidate = 10; // Revalidate every 10 seconds
 
 // Define the Home component
 export default async function Home() {
   // Fetch the items using your API function
-  let allPosts = await getItems();
+  // let allPosts = await getItems();
 
-  if (!allPosts) {
-    allPosts = {}; // Default value if fetchData returns undefined
-  }
+  // if (!allPosts) {
+  //   allPosts = []; // Default value if fetchData returns undefined
+  // }
 
-  // Use a fallback to avoid errors if the data is undefined
-  const edges = allPosts?.edges || [];
+  // // Use a fallback to avoid errors if the data is undefined
+  // const edges = allPosts?.edges || [];
 
   return (
     <>
@@ -23,7 +23,7 @@ export default async function Home() {
         <Search />
       </div>
       <div className="container mx-auto px-4">
-        <Grid images={edges} />
+        {/* <Grid images={edges} /> */}
       </div>
     </>
   );
