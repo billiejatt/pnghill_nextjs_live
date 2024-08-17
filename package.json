@@ -9,7 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@heroicons/react": "^2.1.5",
+    "@nextui-org/react": "^2.4.6",
     "framer-motion": "^11.3.28",
+    "heroicons": "^2.1.5",
     "next": "14.2.5",
     "next-auth": "^4.24.7",
     "nextjs-toploader": "^1.6.12",

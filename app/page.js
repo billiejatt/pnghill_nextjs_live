@@ -1,9 +1,26 @@
+// Import necessary dependencies
+import Grid from "../components/Grid";
+import Search from "../components/Search";
+import { getItems } from "../lib/api";
 
+export const revalidate = 2; // Revalidate every 10 seconds
 
-export default function Home() {
+// Define the Home component
+export default async function Home() {
+  // Fetch the items using your API function
+  const allPosts = await getItems();
+
+  // Use a fallback to avoid errors if the data is undefined
+  const edges = allPosts?.edges || [];
+
   return (
     <>
-      my main website
+      <div className="py-16 block w-full mb-4">
+        <Search />
+      </div>
+      <div className="container mx-auto px-4">
+        <Grid images={edges} />
+      </div>
     </>
   );
 }
