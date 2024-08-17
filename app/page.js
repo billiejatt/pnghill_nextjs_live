@@ -3,12 +3,16 @@ import Grid from "../components/Grid";
 import Search from "../components/Search";
 import { getItems } from "../lib/api";
 
-export const revalidate = 2; // Revalidate every 10 seconds
+export const revalidate = 10; // Revalidate every 10 seconds
 
 // Define the Home component
 export default async function Home() {
   // Fetch the items using your API function
-  const allPosts = await getItems();
+  let allPosts = await getItems();
+
+  if (!allPosts) {
+    allPosts = {}; // Default value if fetchData returns undefined
+  }
 
   // Use a fallback to avoid errors if the data is undefined
   const edges = allPosts?.edges || [];

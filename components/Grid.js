@@ -8,9 +8,6 @@ const Grid = (props) => {
             <div className="flex flex-wrap gap-4">
                 {props.images.map((item, index) => {
                     item = item.node;
-
-                    console.log(item);
-
                     const image = {};
                     image.src = item.items.png.node.sourceUrl;
                     image.alt = item.items.png.node.altText;
